@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrendZ - The Ultimate Destination for Ladies' Essentials</title>
+    <link rel="stylesheet" href="Cosmetics.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            var addButtons = document.querySelectorAll('.add-button');
+            var buyButtons = document.querySelectorAll('.buy-button');
+            var productImages = document.querySelectorAll('.menu-item img');
+
+            addButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    addToCart(this);
+                });
+            });
+
+            buyButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    window.location.href = "Order.htm";
+                });
+            });
+
+            productImages.forEach(function(image) {
+                image.addEventListener('click', function(event) {
+                    event.stopPropagation(); 
+                    var zoomedImage = document.createElement('div');
+                    zoomedImage.className = 'zoomed-image';
+                    zoomedImage.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+                    document.body.appendChild(zoomedImage);
+                    zoomedImage.addEventListener('click', function() {
+                        document.body.removeChild(zoomedImage);
+                    });
+                });
+            });
+        });
+
+        function addToCart(button) {
+            var product = button.closest('.menu-item');
+            var productName = product.querySelector('span').innerText;
+            var quantity = product.querySelector('select[name="quantity"]').value;
+            var size = product.querySelector('select[name="size"]').value;
+            var gift = product.querySelector('input[name="gift"]').checked;
+
+            alert('Added to cart: ' + productName + ', Quantity: ' + quantity + ', Size: ' + size + ', Gift: ' + (gift ? 'Yes' : 'No'));
+
+            window.location.href = "cart.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Dresses & Jumpsuits</h1>
+    </header>
+    <section>
+        <table class="menu-table">
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="Levis.png" alt="Levi's">
+                        <span>Levi's</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="GAP.png" alt="GAP">
+                        <span>GAP</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="HM.png" alt="H&M">
+                        <span>H&M</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="Zara.png" alt="Zara">
+                        <span>Zara</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Uniqlo.png" alt="Uniqlo">
+                        <span>Uniqlo</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Abercrombie.png" alt="Abercrombie & Fitch">
+                        <span>Abercrombie & Fitch</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="OldNavy.png" alt="Old Navy">
+                        <span>Old Navy</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="AmericanEagle.png" alt="American Eagle">
+                        <span>American Eagle</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Forever21.png" alt="Forever 21">
+                        <span>Forever 21</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>    
+    <section>
+        <p>Welcome to the Dresses & Jumpsuits page. Here you will find top Brands.</p>
+        <form name="frm">
+            <table>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D1.png" alt="Floral Wrap Maxi Dress">
+                            <span>Floral Wrap Maxi Dress - ₹1500 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D2.png" alt="Navy Polka Dot Midi Dress">
+                            <span>Navy Polka Dot Midi Dress - ₹800</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D3.png" alt="Red Lace Fit & Flare Dress">
+                            <span>Red Lace Fit & Flare Dress - ₹2000</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D4.png" alt="White Off-Shoulder Ruffle Dress">
+                            <span>White Off-Shoulder Ruffle Dress - ₹2500 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D5.png" alt="Green Pleated Chiffon Dress">
+                            <span>Green Pleated Chiffon Dress - ₹900 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D6.png" alt="Yellow Button-Front Sundress">
+                            <span>Yellow Button-Front Sundress - ₹700</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D7.png" alt="Black Velvet Bodycon Dress">
+                            <span>Black Velvet Bodycon Dress - ₹350 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D8.png" alt="Beige Knit Sweater Dress">
+                            <span>Beige Knit Sweater Dress - ₹600</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D9.png" alt="Teal Satin Slip Dress">
+                            <span>Teal Satin Slip Dress - ₹899</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D10.png" alt="Blue Denim Shirt Dress">
+                            <span>Blue Denim Shirt Dress - ₹439 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D11.png" alt="Pink Sequin Party Dress">
+                            <span>Pink Sequin Party Dress - ₹299 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D12.png" alt="Maroon Velvet A-Line Dress">
+                            <span>Maroon Velvet A-Line Dress - ₹400</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D13.png" alt="Purple High-Low Hem Dress">
+                            <span>Purple High-Low Hem Dress - ₹500 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D14.png" alt="Coral Cold Shoulder Dress">
+                            <span>Coral Cold Shoulder Dress - ₹400</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D15.png" alt="Black Satin Halter Jumpsuit">
+                            <span>Black Satin Halter Jumpsuit - ₹800<span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D16.png" alt="Navy Utility Cargo Jumpsuit">
+                            <span>Navy Utility Cargo Jumpsuit - ₹700 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D17.png" alt="Red Wide-Leg Belted Jumpsuit">
+                            <span>Red Wide-Leg Belted Jumpsuit - ₹850 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D18.png" alt="White Lace Overlay Jumpsuit">
+                            <span>White Lace Overlay Jumpsuit - ₹699</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D19.png" alt="Olive Button-Front Jumpsuit">
+                            <span>Olive Button-Front Jumpsuit - ₹399 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D20.png" alt="Floral Print Ruffle Jumpsuit">
+                            <span>Floral Print Ruffle Jumpsuit - ₹239</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D21.png" alt="Blue Denim Overall Jumpsuit">
+                            <span>Blue Denim Overall Jumpsuit - ₹379</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D22.png" alt="Burgundy Velvet Wrap Jumpsuit">
+                            <span>Burgundy Velvet Wrap Jumpsuit - ₹859 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D23.png" alt="Beige Strappy Culotte Jumpsuit">
+                            <span>Beige Strappy Culotte Jumpsuit - ₹299 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="D24.png" alt="Grey Off-Shoulder Knit Jumpsuit">
+                            <span>Grey Off-Shoulder Knit Jumpsuit - ₹500</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+</html>

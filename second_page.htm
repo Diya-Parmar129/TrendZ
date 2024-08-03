@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendZ - The Ultimate Destination for Ladies' Essentials</title>
+    <link rel="stylesheet" href="second_page.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var link = this.getAttribute('data-link');
+                    if (link) {
+                        window.location.href = link;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">TrendZ</div>
+        <nav>
+            <ul>
+                <li><a href="Welcome.htm">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <form class="search-form">
+            <input type="search" placeholder="Search products">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <section>
+        <table class="menu-table">
+            <tr>
+                <td>
+                    <div class="menu-item" data-link="Tops tees & jeans.htm">
+                        <img src="Tops tees & jeans.png" alt="Tops tees & jeans">
+                        <span>Tops tees & jeans</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Kurtis & salwar suits.htm">
+                        <img src="Kurtis & salwar suits.png" alt="Kurtis & salwar suits">
+                        <span>Kurtis & salwar suits</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Sarees.htm">
+                        <img src="Sarees.png" alt="Sarees">
+                        <span>Sarees</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item" data-link="Dresses & jumpsuits.htm">
+                        <img src="Dresses & jumpsuits.png" alt="Dresses & jumpsuits">
+                        <span>Dresses & jumpsuits</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Cosmetics.htm">
+                        <img src="Cosmetics.png" alt="Cosmetics">
+                        <span>Cosmetics</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Footwear.htm">
+                        <img src="Footwear.png" alt="Footwear">
+                        <span>Footwear</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item" data-link="Watches & Perfume.htm">
+                        <img src="Watches & Perfume.png" alt="Watches & Perfume">
+                        <span>Watches & Perfume</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Jewellery.htm">
+                        <img src="Jewellery.png" alt="Jewellery">
+                        <span>Jewellery</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item" data-link="Handbags & bags.htm">
+                        <img src="Handbags & bags.png" alt="Handbags & bags">
+                        <span>Handbags & bags</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TrendZ. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><img src="fb.png" alt="Facebook"></a>
+                <a href="#"><img src="twiter.png" alt="Twitter"></a>
+                <a href="#"><img src="insta.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrendZ - The Ultimate Destination for Ladies' Essentials</title>
+    <link rel="stylesheet" href="Cosmetics.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            var addButtons = document.querySelectorAll('.add-button');
+            var buyButtons = document.querySelectorAll('.buy-button');
+            var productImages = document.querySelectorAll('.menu-item img');
+
+            addButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    addToCart(this);
+                });
+            });
+
+            buyButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    window.location.href = "Order.htm";
+                });
+            });
+
+            productImages.forEach(function(image) {
+                image.addEventListener('click', function(event) {
+                    event.stopPropagation(); 
+                    var zoomedImage = document.createElement('div');
+                    zoomedImage.className = 'zoomed-image';
+                    zoomedImage.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+                    document.body.appendChild(zoomedImage);
+                    zoomedImage.addEventListener('click', function() {
+                        document.body.removeChild(zoomedImage);
+                    });
+                });
+            });
+        });
+
+        function addToCart(button) {
+            var product = button.closest('.menu-item');
+            var productName = product.querySelector('span').innerText;
+            var quantity = product.querySelector('select[name="quantity"]').value;
+            var gift = product.querySelector('input[name="gift"]').checked;
+
+            alert('Added to cart: ' + productName + ', Quantity: ' + quantity + ', Gift: ' + (gift ? 'Yes' : 'No'));
+
+            window.location.href = "cart.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cosmetics</h1>
+    </header>
+    <section>
+        <table class="menu-table">
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="Lakmé.png" alt="Lakmé">
+                        <span>Lakmé</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Maybelline.png" alt="Maybelline">
+                        <span>Maybelline</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="MAC.png" alt="MAC">
+                        <span>MAC</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="MyGlamm.png" alt="MyGlamm">
+                        <span>MyGlamm</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Sugar.png" alt="Sugar">
+                        <span>Sugar</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="RENÉE.png" alt="RENÉE">
+                        <span>RENÉE</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="menu-item">
+                        <img src="Nykaa.png" alt="Nykaa">
+                        <span>Nykaa</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Elle 18.png" alt="Elle 18">
+                        <span>Elle 18</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item">
+                        <img src="Mamaearth.png" alt="Mamaearth">
+                        <span>Mamaearth</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <p>Welcome to the Top Brands in cosmetics page. Here you will find top Brands.</p>
+        <form name="frm">
+            <table>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C1.png" alt="Lip Stick">
+                            <span>Lip Stick - ₹100 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C2.png" alt="Blush">
+                            <span>Blush - ₹200</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C3.png" alt="Nail Paint">
+                            <span>Nail Paint - ₹90</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C4.png" alt="Eye Shadow">
+                            <span>Eye Shadow - ₹180 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C5.png" alt="Compact">
+                            <span>Compact - ₹250 <span class="discount">(12% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C6.png" alt="Highlighter">
+                            <span>Highlighter - ₹380</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C7.png" alt="Concealer">
+                            <span>Concealer - ₹430</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C8.png" alt="Bronzer">
+                            <span>Bronzer - ₹350 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C9.png" alt="BB Cream">
+                            <span>BB Cream - ₹220</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C10.png" alt="Eyebrow Pencil">
+                            <span>Eyebrow Pencil - ₹180</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C11.png" alt="Lip Balm">
+                            <span>Lip Balm - ₹98 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C12.png" alt="Lip Gloss">
+                            <span>Lip Gloss - ₹90</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C13.png" alt="CC Cream">
+                            <span>CC Cream - ₹99</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C14.png" alt="Setting Spray">
+                            <span>Setting Spray - ₹197 <span class="discount">(12% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C15.png" alt="Face Primer">
+                            <span>Face Primer - ₹370</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C16.png" alt="Eyeliner">
+                            <span>Eyeliner - ₹120</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C17.png" alt="Lip Liner">
+                            <span>Lip Liner - ₹230 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C18.png" alt="Eye Primer">
+                            <span>Eye Primer - ₹430<span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C19.png" alt="Contour Kit">
+                            <span>Contour Kit - ₹640<span class="discount">(30% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C20.png" alt="Translucent Powder">
+                            <span>Translucent Powder - ₹170 <span class="discount">(12% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C21.png" alt="Setting Powder">
+                            <span>Setting Powder - ₹320</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C22.png" alt="Matte Lipstick">
+                            <span>Matte Lipstick - ₹359</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C23.png" alt="Liquid Lipstick">
+                            <span>Liquid Lipstick - ₹499 <span class="discount">(32% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C24.png" alt="Tinted Moisturizer">
+                            <span>Tinted Moisturizer - ₹243</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C25.png" alt="Foundation">
+                            <span>Foundation - ₹250 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C26.png" alt="Mascara">
+                            <span>Mascara - ₹120</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="C27.png" alt="Kajal">
+                            <span>Kajal - ₹80</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+</html>

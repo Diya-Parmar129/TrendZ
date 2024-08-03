@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrendZ - The Ultimate Destination for Ladies' Essentials</title>
+    <link rel="stylesheet" href="Cosmetics.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            var addButtons = document.querySelectorAll('.add-button');
+            var buyButtons = document.querySelectorAll('.buy-button');
+            var productImages = document.querySelectorAll('.menu-item img');
+
+            addButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    addToCart(this);
+                });
+            });
+
+            buyButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    window.location.href = "Order.htm";
+                });
+            });
+
+            productImages.forEach(function(image) {
+                image.addEventListener('click', function(event) {
+                    event.stopPropagation(); 
+                    var zoomedImage = document.createElement('div');
+                    zoomedImage.className = 'zoomed-image';
+                    zoomedImage.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+                    document.body.appendChild(zoomedImage);
+                    zoomedImage.addEventListener('click', function() {
+                        document.body.removeChild(zoomedImage);
+                    });
+                });
+            });
+        });
+
+        function addToCart(button) {
+            var product = button.closest('.menu-item');
+            var productName = product.querySelector('span').innerText;
+            var quantity = product.querySelector('select[name="quantity"]').value;
+            var size = product.querySelector('select[name="size"]').value;
+            var gift = product.querySelector('input[name="gift"]').checked;
+
+            alert('Added to cart: ' + productName + ', Quantity: ' + quantity + ', Size: ' + size + ', Gift: ' + (gift ? 'Yes' : 'No'));
+
+            window.location.href = "cart.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Kurtis & salwar suits</h1>
+    </header>
+    <section>
+        <p>Welcome to the Kurtis & salwar suits page. Here you will find top Brands.</p>
+        <form name="frm">
+            <table>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K1.png" alt="Floral Print Anarkali Kurti">
+                            <span>Floral Print Anarkali Kurti - ₹700 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K2.png" alt="Embroidered Straight Kurti">
+                            <span>Embroidered Straight Kurti - ₹600</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K3.png" alt="Block Print A-Line Kurti">
+                            <span>Block Print A-Line Kurti - ₹800</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K4.png" alt="Chikankari Cotton Kurti">
+                            <span>Chikankari Cotton Kurti - ₹2500 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K5.png" alt="Bandhani Print Kurti">
+                            <span>Bandhani Print Kurti - ₹1500 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K6.png" alt="Asymmetrical Hemline Kurti">
+                            <span>Asymmetrical Hemline Kurti - ₹700</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K7.png" alt="High-Low Hem Kurti">
+                            <span>High-Low Hem Kurti - ₹350 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K8.png" alt="Layered Anarkali Kurti">
+                            <span>Layered Anarkali Kurti - ₹600</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K9.png" alt="Ikat Print Kurti">
+                            <span>Ikat Print Kurti - ₹899</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K10.png" alt="Kalamkari Print Kurti">
+                            <span>Kalamkari Print Kurti - ₹439 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K11.png" alt="Cotton Kurti with Palazzo">
+                            <span>Cotton Kurti with Palazzo - ₹299 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K12.png" alt="Georgette Kurti with Dupatta">
+                            <span>Georgette Kurti with Dupatta - ₹400</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K13.png" alt="Angrakha Style Kurti">
+                            <span>Angrakha Style Kurti - ₹500 <span class="discount">(20% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K14.png" alt="Handloom Silk Kurti">
+                            <span>Handloom Silk Kurti - ₹400</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K15.png" alt="Foil Print Kurti">
+                            <span>Foil Print Kurti - ₹800<span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K16.png" alt="Khadi Kurti with Churidar">
+                            <span>Khadi Kurti with Churidar - ₹700 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K17.png" alt="Linen Kurti with Pants">
+                            <span>Linen Kurti with Pants - ₹850 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K18.png" alt="Digital Print Kurti">
+                            <span>Digital Print Kurti - ₹699</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K19.png" alt="Bell Sleeve Kurti">
+                            <span>Bell Sleeve Kurti - ₹399 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K20.png" alt="Pintuck Detail Kurti">
+                            <span>Pintuck Detail Kurti - ₹239</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K21.png" alt="Tassel Detail Kurti">
+                            <span>Tassel Detail Kurti - ₹379</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K22.png" alt="Zari Work Kurti">
+                            <span>Zari Work Kurti - ₹859 <span class="discount">(15% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K23.png" alt="Ruffle Sleeves Kurti">
+                            <span>Ruffle Sleeves Kurti - ₹299 <span class="discount">(10% off for Raksha Bandhan!)</span></span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="menu-item">
+                            <img src="K24.png" alt="Schiffli Embroidered Kurti">
+                            <span>Schiffli Embroidered Kurti - ₹500</span>
+                            <div class="options">
+                                <label>Quantity:</label>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <label>Size:</label>
+                                <select name="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <div>
+                                    <button type="button" class="add-button">ADD TO CART</button>
+                                    <button type="button" class="buy-button">BUY NOW</button>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="gift" value="yes">
+                                    <label>Add as Gift</label>
+                                </div>
+                                <div>
+                                    <label>Wishlist:</label>
+                                    <input type="text" name="wishlist" placeholder="Add to Wishlist">
+                                </div>
+                                <div>
+                                    <label>Review:</label>
+                                    <input type="text" name="review" placeholder="Give a Review">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+</html>

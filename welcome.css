@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 161, 161, 0.9);
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .search-form {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+header .search-form input[type="search"] {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 300px;
+}
+
+header .search-form button {
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    cursor: pointer;
+}
+
+header .search-form button:hover {
+    background-color: #e60000;
+}
+
+section.welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('home1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.welcome-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.welcome-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.explore-button {
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore-button:hover {
+    background-color: #e60000;
+}
+
+footer {
+    background-color: rgba(255, 161, 161, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+}
+
+footer .social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    header .search-form input[type="search"] {
+        width: 200px;
+    }
+
+    .welcome-content h1 {
+        font-size: 2.5em;
+    }
+
+    .welcome-content p {
+        font-size: 1.2em;
+    }
+
+    .explore-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+}

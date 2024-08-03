@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('home1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    background: rgba(255, 161, 161, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding-top: 60px;
+}
+
+#about {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 45%;
+    margin-right: 20px;
+}
+
+#about h2 {
+    color: #e63946;
+}
+
+#about p {
+    line-height: 1.6;
+}
+
+.login-container {
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.login-container h1 {
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-form .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.login-form .options a {
+    color: #e63946;
+    text-decoration: none;
+}
+
+.login-form button[type="submit"] {
+    background-color: #e63946;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.social-btn {
+    background-color: #f8f8f8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.social-btn img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.social-btn.fb {
+    color: #3b5998;
+}
+
+.social-btn.google {
+    color: #db4437;
+}
+
+.social-btn.twitter {
+    color: #1da1f2;
+}

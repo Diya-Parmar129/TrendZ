@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendZ - The Ultimate Destination for Ladies' Essentials</title>
+    <link rel="stylesheet" href="home.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('facebook-btn').addEventListener('click', function() {
+        openSocialMediaLink('https://www.facebook.com');
+    });
+
+    document.getElementById('google-btn').addEventListener('click', function() {
+        openSocialMediaLink('https://www.google.com');
+    });
+
+    document.getElementById('twitter-btn').addEventListener('click', function() {
+        openSocialMediaLink('https://twitter.com');
+    });
+});
+
+function showLoginAlert() {
+    alert("You have successfully logged in!");
+    window.location.href = "welcome.htm"; 
+}
+
+function openSocialMediaLink(url) {
+    window.open(url, '_blank');
+}
+
+function validateLoginForm(event) {
+    event.preventDefault(); 
+    var email = document.querySelector('.login-form input[type="email"]').value;
+    var password = document.querySelector('.login-form input[type="password"]').value;
+
+    if (email === "" || password === "") {
+        alert("Please fill in both email and password fields.");
+    } else {
+        showLoginAlert();
+    }
+}
+
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>TrendZ</h1>
+    </header>
+
+    <div class="main-content">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to TrendZ, your one-stop solution for ladies' fashion and accessories. Established in 2023, we are dedicated to bringing you the best quality products with just a few simple clicks.</p>
+            
+            <h2>Why Choose Us</h2>
+            <p>We believe in high-quality products, exceptional customer service, and the convenience of having your favorite items delivered fast and fresh. We offer a wide variety of fashion and lifestyle essentials, customizable options, and exclusive deals.</p>
+            
+            <h2>Customer-Centric Approach</h2>
+            <p>Our user-friendly platform ensures a seamless shopping experience, and our dedicated delivery team guarantees that your products arrive on time. Your satisfaction is our top priority. We listen to your feedback and continuously strive to improve our services. With 24/7 customer support, we're always here to help.</p>
+        </section>
+
+        <div class="login-container">
+            <h1>Login</h1>
+            <form class="login-form">
+                <input type="email" placeholder="Enter Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" onclick="validateLoginForm(event)">LOGIN</button>
+                <p>Login with</p>
+                <div class="social-login">
+                    <button id="facebook-btn" class="social-btn fb"><img src="fb.png" alt="Facebook" height="60%" width="60%"> Facebook</button>
+                    <button id="google-btn" class="social-btn google"><img src="google.png" alt="Google" height="50%" width="70%"> Google</button>
+                    <button id="twitter-btn" class="social-btn twitter"><img src="twiter.png" alt="Twitter" height="70%" width="70%"> Twitter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
